@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "luxair-v2",
+    "description": "POC of Air app",
+    "slug": "luxair-v2",
+    "privacy": "public",
+    "sdkVersion": "21.0.0",
+    "version": "0.0.2",
+    "orientation": "portrait",
+    "primaryColor": "#1f3b77",
+    "icon": "./assets/icons/app-icon.png",
+    "notification": {
+      "icon": "./assets/icons/notification-icon.png",
+      "color": "#1f3b77"
+    },
+    "loading": {
+      "icon": "./assets/icons/loading-icon.png"
+    },
+    "packagerOpts": {
+      "assetExts": ["ttf"]
+    },
+    "ios": {
+      "bundleIdentifier": "com.sk3vy.new-project-template",
+      "supportsTablet": true
+    }
+  }
+}
