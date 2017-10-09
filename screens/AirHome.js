@@ -9,8 +9,7 @@ import {
 	View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-
-import { MonoText } from '../components/StyledText';
+import TileButton from '../components/TileButton'
 
 export default class AirHome extends React.Component {
 	static navigationOptions = {
@@ -24,15 +23,21 @@ export default class AirHome extends React.Component {
 					style={styles.container}
 					contentContainerStyle={styles.contentContainer}>
 
-					<View style={styles.helpContainer}>
-						<TouchableOpacity
-							onPress={this._openAboutLink}
-							style={styles.helpLink}>
-							<Text style={styles.helpLinkText}>
-								About company
-							</Text>
-						</TouchableOpacity>
-					</View>
+					<TileButton
+						height={200}
+						title="All Offers"
+						caption="List of all available for you offers"
+						style={styles.tileItem}/>
+					<TileButton
+						height={200}
+						title="Map"
+						caption="See the destination city with best deals"
+						style={styles.tileItem}/>
+					<TileButton
+						height={200}
+						title="About"
+						onPress={this._openAboutLink}
+						style={styles.tileItem}/>
 
 				</ScrollView>
 
@@ -54,6 +59,11 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#fff',
+	},
+	tileItem: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center'
 	},
 	developmentModeText: {
 		marginBottom: 20,
