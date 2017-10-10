@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import TileButton from '../components/TileButton'
+import OffersPreview from '../components/OffersPreview'
 
 export default class AirHome extends React.Component {
 	static navigationOptions = {
@@ -24,20 +25,28 @@ export default class AirHome extends React.Component {
 					contentContainerStyle={styles.contentContainer}>
 
 					<TileButton
-						height={200}
 						title="All Offers"
 						caption="List of all available for you offers"
+						type="offers"
 						style={styles.tileItem}/>
+					<OffersPreview/>
 					<TileButton
-						height={200}
 						title="Map"
 						caption="See the destination city with best deals"
+						type="map"
 						style={styles.tileItem}/>
 					<TileButton
-						height={200}
+						title="My Flight"
+						onPress={this._openAboutLink}
+						style={styles.tileItemSmall}/>
+					<TileButton
+						title="Profile"
+						onPress={this._openAboutLink}
+						style={styles.tileItemSmall}/>
+					<TileButton
 						title="About"
 						onPress={this._openAboutLink}
-						style={styles.tileItem}/>
+						style={styles.tileItemSmall}/>
 
 				</ScrollView>
 
@@ -55,15 +64,25 @@ export default class AirHome extends React.Component {
 	};
 }
 
+const tileStyles = {
+	flex: 1,
+	justifyContent: 'center',
+	alignItems: 'center',
+	height: 200,
+	borderBottomWidth: 3,
+	borderColor: '#fff'
+};
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#fff',
 	},
 	tileItem: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center'
+		...tileStyles
+	},
+	tileItemSmall: {
+		...tileStyles,
+		height: 100
 	},
 	developmentModeText: {
 		marginBottom: 20,
