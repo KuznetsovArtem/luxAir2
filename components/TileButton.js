@@ -65,13 +65,13 @@ const styles = StyleSheet.create({
 		borderRadius: 5
 	},
 	title: {
-		fontFamily: 'space-mono',
+		// fontFamily: 'space-mono',
 		color: '#fff',
 		fontSize: 36,
 		fontWeight: "500"
 	},
 	caption: {
-		fontFamily: 'space-mono',
+		// fontFamily: 'space-mono',
 		color: '#fff',
 		fontSize: 18
 	}
