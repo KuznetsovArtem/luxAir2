@@ -7,6 +7,11 @@ export default class TileButton extends React.Component {
 	images = {
 		offers: require('../assets/images/offersButton.jpg'),
 		map: require('../assets/images/mapButton.png'),
+		flight: require('../assets/images/myFlight.jpg'),
+		profile: require('../assets/images/devLogo.png'),
+		about: require('../assets/images/about.jpg'),
+		media: require('../assets/images/media.jpg'),
+		etc: require('../assets/images/etc.png'),
 	};
 
 	render() {
@@ -22,6 +27,21 @@ export default class TileButton extends React.Component {
 		let blurInensity = 95;
 
 		switch (type) {
+			case 'flight':
+				imageSource = this.images.flight;
+				break;
+			case 'profile':
+				imageSource = this.images.profile;
+				break;
+			case 'about':
+				imageSource = this.images.about;
+				break;
+			case 'media':
+				imageSource = this.images.media;
+				break;
+			case 'etc':
+				imageSource = this.images.etc;
+				break;
 			case 'map':
 				imageSource = this.images.map;
 				blurStyle = styles.blurView;

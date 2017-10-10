@@ -39,16 +39,35 @@ export default class AirHome extends React.Component {
 						onPress={() => this._navigateTo('Map')}
 						type="map"
 						style={styles.tileItem}/>
-					<TileButton
-						title="My Flight"
-						onPress={this._openAboutLink}
-						style={styles.tileItemSmall}/>
-					<TileButton
-						title="Profile"
-						onPress={this._openAboutLink}
-						style={styles.tileItemSmall}/>
+					<View style={{flexDirection:'row', justifyContent:'space-around'}}>
+						<View style={{flex: 1}}>
+						<TileButton
+							title="My Flight"
+							type="flight"
+							onPress={this._openAboutLink}
+							style={styles.tileItemSmall}/>
+						</View>
+						<View style={{flex: 1}}>
+						<TileButton
+							title="Profile"
+							type="profile"
+							onPress={this._openAboutLink}
+							style={styles.tileItemSmall}/>
+						</View>
+					</View>
 					<TileButton
 						title="About"
+						type="about"
+						onPress={this._openAboutLink}
+						style={styles.tileItemSmall}/>
+					<TileButton
+						title="Media"
+						type="media"
+						onPress={this._openAboutLink}
+						style={styles.tileItemSmall}/>
+					<TileButton
+						title="..."
+						type="etc"
 						onPress={this._openAboutLink}
 						style={styles.tileItemSmall}/>
 
