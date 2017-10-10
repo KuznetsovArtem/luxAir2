@@ -1,8 +1,10 @@
 {
   "name": "luxair-v2",
-  "version": "0.0.3",
-  "description": "Hello Expo!",
-  "author": null,
+  "version": "0.0.4",
+  "description": "POC app",
+  "authors": [
+    "Artem Kuznetsov"
+  ],
   "license": "",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {

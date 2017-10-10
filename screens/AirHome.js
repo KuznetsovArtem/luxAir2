@@ -69,8 +69,8 @@ const tileStyles = {
 	justifyContent: 'center',
 	alignItems: 'center',
 	height: 200,
-	borderBottomWidth: 3,
-	borderColor: '#fff'
+	borderTopWidth: 3,
+	borderColor: '#1f3b77'
 };
 const styles = StyleSheet.create({
 	container: {

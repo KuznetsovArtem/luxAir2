@@ -17,11 +17,15 @@ export default class TileButton extends React.Component {
 		});
 		let imageSource;
 		let blurStyle = styles.blurViewSmall;
+		let blurTint = 'light';
+		let blurInensity = 95;
 
 		switch (type) {
 			case 'map':
 				imageSource = this.images.map;
 				blurStyle = styles.blurView;
+				blurTint = 'dark';
+				blurInensity = 50;
 				break;
 			case 'offers':
 				blurStyle = styles.blurView;
@@ -30,10 +34,10 @@ export default class TileButton extends React.Component {
 		}
 
 		return (
-			<TouchComponent>
+			<TouchComponent onPress={this.props.onPress}>
 				<ImageBackground source={imageSource} style={{}}>
 					<View style={this.props.style}>
-						<BlurView intensity={95} style={blurStyle}>
+						<BlurView intensity={blurInensity} style={blurStyle} tint={blurTint}>
 							<Text style={styles.title}>{title}</Text>
 							<Text style={styles.caption}>{caption}</Text>
 						</BlurView>
@@ -49,6 +53,7 @@ const styles = StyleSheet.create({
 		justifyContent:'center',
 		alignItems:'center',
 		padding: 20,
+		marginHorizontal: 20,
 		borderRadius: 5
 	},
 	blurViewSmall: {
