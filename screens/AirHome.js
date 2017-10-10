@@ -16,8 +16,10 @@ export default class AirHome extends React.Component {
 	static navigationOptions = {
 		header: null,
 	};
-
 	render() {
+		const offersPreviewActions = {
+			navigateToOffer: () => this._navigateTo('OfferPage')
+		};
 		return (
 			<View style={styles.container}>
 				<ScrollView
@@ -30,7 +32,7 @@ export default class AirHome extends React.Component {
 						type="offers"
 						onPress={() => this._navigateTo('Offers')}
 						style={styles.tileItem}/>
-					<OffersPreview/>
+					<OffersPreview actions={offersPreviewActions}/>
 					<TileButton
 						title="Map"
 						caption="See the destination city with best deals"

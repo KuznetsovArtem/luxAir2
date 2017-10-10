@@ -5,7 +5,7 @@
     "slug": "luxair-v2",
     "privacy": "public",
     "sdkVersion": "21.0.0",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "orientation": "portrait",
     "primaryColor": "#1f3b77",
     "icon": "./assets/icons/app-icon.png",

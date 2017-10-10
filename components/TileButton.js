@@ -13,7 +13,8 @@ export default class TileButton extends React.Component {
 		const {title, caption, type} = this.props;
 		const TouchComponent = Platform.select({
 			ios: TouchableHighlight,
-			android: TouchableNativeFeedback
+			// android: TouchableNativeFeedback
+			android: TouchableHighlight
 		});
 		let imageSource;
 		let blurStyle = styles.blurViewSmall;

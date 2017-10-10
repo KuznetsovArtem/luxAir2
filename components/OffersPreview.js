@@ -8,6 +8,9 @@ import {offersTop as OFFERS} from '../api/offers';
 
 
 export default class OffersPreview extends React.Component {
+	_navigateToOffer = () => {
+		this.props.actions.navigateToOffer();
+	};
 	_renderItem = ({item}) => {
 		if(item.type === 1) {
 			return (
@@ -22,6 +25,7 @@ export default class OffersPreview extends React.Component {
 						)}
 						<Button
 							icon={{name: 'flight-takeoff'}}
+							onPress={this._navigateToOffer}
 							backgroundColor='#1f3b77'
 							buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
 							title='VIEW NOW' />
@@ -42,6 +46,7 @@ export default class OffersPreview extends React.Component {
 					</Text>
 					<Button
 						icon={{name: 'code'}}
+						onPress={this._navigateToOffer}
 						backgroundColor='#1f3b77'
 						buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
 						title='VIEW NOW' />

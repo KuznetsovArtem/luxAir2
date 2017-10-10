@@ -1,46 +1,71 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import { List, ListItem } from 'react-native-elements'
+import { Button, StyleSheet, View } from 'react-native';
+import { DangerZone } from 'expo';
+const { Lottie } = DangerZone;
 
-export default class Offers extends React.Component {
-	static navigationOptions = {
-		title: 'Offers',
+export default class App extends React.Component {
+	state = {
+		animation: null,
 	};
 
+	componentWillMount() {
+		this._playAnimation();
+	}
+
 	render() {
-
-		const list = [
-			{
-				title: 'Appointments',
-				icon: 'av-timer'
-			},
-			{
-				title: 'Trips',
-				icon: 'flight-takeoff'
-			},
-		];
-
-
 		return (
-			<List>
-				{
-					list.map((item, i) => (
-						<ListItem
-							key={i}
-							title={item.title}
-							leftIcon={{name: item.icon}}
-						/>
-					))
-				}
-			</List>
+			<View style={styles.animationContainer}>
+				{this.state.animation &&
+				<Lottie
+					ref={animation => {
+						this.animation = animation;
+					}}
+					style={{
+						width: 400,
+						height: 400,
+						backgroundColor: '#eee',
+					}}
+					source={this.state.animation}
+				/>}
+				<View style={styles.buttonContainer}>
+					<Button
+						title="Restart Animation"
+						onPress={this._playAnimation}
+					/>
+				</View>
+			</View>
 		);
 	}
+
+	_playAnimation = () => {
+		if (!this.state.animation) {
+			this._loadAnimationAsync();
+		} else {
+			this.animation.reset();
+			this.animation.play();
+		}
+	};
+
+	_loadAnimationAsync = async () => {
+		let result = await fetch(
+			'https://cdn.rawgit.com/airbnb/lottie-react-native/635163550b9689529bfffb77e489e4174516f1c0/example/animations/Watermelon.json'
+		);
+
+		this.setState(
+			{ animation: JSON.parse(result._bodyText) },
+			this._playAnimation
+		);
+	};
 }
 
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		paddingTop: 15,
+	animationContainer: {
 		backgroundColor: '#fff',
+		alignItems: 'center',
+		justifyContent: 'center',
+		flex: 1,
+	},
+	buttonContainer: {
+		paddingTop: 20,
 	},
 });
