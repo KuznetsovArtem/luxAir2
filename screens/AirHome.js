@@ -28,11 +28,13 @@ export default class AirHome extends React.Component {
 						title="All Offers"
 						caption="List of all available for you offers"
 						type="offers"
+						onPress={() => this._navigateTo('Offers')}
 						style={styles.tileItem}/>
 					<OffersPreview/>
 					<TileButton
 						title="Map"
 						caption="See the destination city with best deals"
+						onPress={() => this._navigateTo('Map')}
 						type="map"
 						style={styles.tileItem}/>
 					<TileButton
@@ -56,6 +58,10 @@ export default class AirHome extends React.Component {
 			</View>
 		);
 	}
+
+	_navigateTo = (screen, data) => {
+		this.props.navigation.navigate(screen, data)
+	};
 
 	_openAboutLink = () => {
 		WebBrowser.openBrowserAsync(

@@ -4,33 +4,7 @@ import {
 	FlatList, ImageBackground
 } from 'react-native';
 import {Button, Card} from 'react-native-elements';
-
-const OFFERS = [{
-	id: 1,
-	key: 1,
-	image: require('../assets/images/hotelOffer.jpg'),
-	text: 'Hotel price drop off'
-}, {
-	id: 2,
-	key: 2,
-	type: 1,
-	title: 'Drop off',
-	info: [
-		'Price drop off',
-		'Distance: 2km',
-		'Half price'
-	]
-}, {
-	id: 3,
-	key: 3,
-	image: require('../assets/images/hotelOffer.jpg'),
-	text: 'Hotel price drop off'
-}, {
-	id: 4,
-	key: 4,
-	image: require('../assets/images/hotelOffer.jpg'),
-	text: 'Hotel price drop off'
-}];
+import {offersTop as OFFERS} from '../api/offers';
 
 
 export default class OffersPreview extends React.Component {
